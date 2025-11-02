@@ -55,6 +55,19 @@ docker build -t my-server-app:v1_01 .
 |Run local registry|`docker run -d -p 5000:5000 --name registry registry:2`|Start local Docker registry.|
 |Push to local registry|`docker tag myapp:v1 localhost:5000/myapp:v1 && docker push localhost:5000/myapp:v1`|Push image to local registry.|
 
+---
+
+## Docker Network
+
+|Purpose|Command|Description|
+|---|---|---|
+|Create a Docker Network|`docker network create iot_network`|Create a docker network `iot_network`|
+|Run `Server` app|`docker run -d --name server --network iot_network -p 5000:5000 server_image:v1_01`|Run the docker image `server_image:v1_01`|
+|Run `Data Service` app|`docker run -d --name data_service --network iot_network -p 5001:5001 data_service_image:v1_01`|Run the docker image `data_service_image:v1_01`|
+
+---
+
+
 ## Kubernetes / K3s Command Summary
 ### Deploy and Manage Applications
 |Purpose|Command|Description|

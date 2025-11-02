@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-server-app-deployment
+  name: server_deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-server-app
+      app: server
   template:
     metadata:
       labels:
-        app: my-server-app
+        app: server
     spec:
       containers:
-      - name: my-server-app-container
-        image: "docker.io/library/my-server-app:v1_01"
+      - name: server_container
+        image: "docker.io/library/server_image:v1_01"
         ports:
         - containerPort: 5000
 

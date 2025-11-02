@@ -1,19 +1,19 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: my-server-app-ingress
+  name: server_ingress
   annotations:
     kubernetes.io/ingress.class: "traefik"
 spec:
   rules:
-  - host: my-server-app.local
+  - host: server.local
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: my-server-app-service
+            name: server_service
             port:
               number: 80
 
