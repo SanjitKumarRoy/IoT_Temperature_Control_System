@@ -10,11 +10,11 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the application code
-COPY hello.py .
+COPY data_service.py .
 
 # Expose port 5000
 EXPOSE 5000
 
 # Run the app with Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "hello:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "data_service:app"]
 

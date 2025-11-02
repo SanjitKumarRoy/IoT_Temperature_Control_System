@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-data-service-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-data-service-app
+  template:
+    metadata:
+      labels:
+        app: my-data-service-app
+    spec:
+      containers:
+      - name: my-data-service-app-container
+        image: "docker.io/library/my-data-service-app:v1_01"
+        ports:
+        - containerPort: 5000
+
