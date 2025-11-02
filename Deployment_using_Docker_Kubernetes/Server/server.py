@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 TARGET_TEMPERATURE = 20.0
 #DATA_SERVICE_ADDRESS = "http://127.0.0.1:5001/history"
-DATA_SERVICE_ADDRESS = os.getenv("DATA_SERVICE_ADDRESS", "http://my_data_service:5001/history")
+DATA_SERVICE_ADDRESS = os.getenv("DATA_SERVICE_ADDRESS", "http://data-service-service:80/history")
 
 
 HTML_TEMPLATE = """

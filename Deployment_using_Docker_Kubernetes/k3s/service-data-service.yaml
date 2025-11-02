@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: data_service_service
+  name: data-service-service
 spec:
   selector:
-    app: data_service
+    app: data-service
   ports:
     - protocol: TCP
       port: 80

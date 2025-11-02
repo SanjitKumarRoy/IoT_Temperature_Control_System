@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: server_deployment
+  name: server-deployment
 spec:
   replicas: 1
   selector:
@@ -13,8 +13,8 @@ spec:
         app: server
     spec:
       containers:
-      - name: server_container
-        image: "docker.io/library/server_image:v1_01"
+      - name: server-container
+        image: "docker.io/library/my_server_image:v1_01"
         ports:
         - containerPort: 5000
 

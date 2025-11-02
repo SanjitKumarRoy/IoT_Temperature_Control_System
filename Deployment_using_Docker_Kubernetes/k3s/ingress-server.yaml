@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: server_ingress
+  name: server-ingress
   annotations:
     kubernetes.io/ingress.class: "traefik"
 spec:
@@ -13,7 +13,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: server_service
+            name: server-service
             port:
               number: 80
 
